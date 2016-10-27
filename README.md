@@ -1,4 +1,5 @@
 # sp2016
 
 Projekt Poraba
-http://prntscr.com/czh8k4
+Povezava do Use case:
+http://prntscr.com/czhaj8
