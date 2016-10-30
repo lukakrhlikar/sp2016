@@ -7,5 +7,13 @@ http://prntscr.com/czhaj8
 (neregistriran) http://prntscr.com/czhgjx  
 (registriran) http://prntscr.com/czhgua  
 
-**Wireframe**:
+**Sitemap**:
 http://prntscr.com/d0up2b
+
+**Wireframe**:
+Home in My cars: (my cars dostopen samo če si vpisan če nisi je potreban registracija oziroma vpis)
+http://prntscr.com/d0voca
+Search cars in Top 10:
+http://prntscr.com/d0vk41
+Trip expenses:
+http://prntscr.com/d0vlww
