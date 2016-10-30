@@ -6,3 +6,6 @@ http://prntscr.com/czhaj8
 **Work flow** (*neregistriran uporabnik* in *registriran*):  
 (neregistriran) http://prntscr.com/czhgjx  
 (registriran) http://prntscr.com/czhgua  
+
+**Wireframe**:
+http://prntscr.com/d0up2b
