@@ -3,50 +3,110 @@
 <head>
     <title>Poraba</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css_index.css">
+    <link rel="stylesheet"gits  type="text/css" href="css_index.css">
+    <meta charset="UTF-8">
 </head>
 <body>
     <div class="header">
         <div class="row">
-            <div class="col-4 naslov">
-                <h1>Poraba</h1>
+            <div class="col-4 col-m-4 naslov">
+                <h1 style="font-size:500%"><a id="barva_naslova" href="index.html">Poraba</a></h1>
             </div>
-            <div class="col-6"></div>
-            <div class="col-2">
+            <div class="col-4 col-m-4"></div>
+            <div class="col-2 col-m-2" style="font-size:200%">
                 Prijavi se: <button type="button">Prijava</button>
             </div>
-            <div class="col-6"></div>
-            <div class="col-2">
+            <div class="col-2 col-m-2" style="font-size:200%">
                 Registriraj se: <button type="button">Registracija</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-10"></div>
-            <div class="col-2">
-                Išči vozilo:<input type="text" name="iskalnik" maxlength="15" size="14" placeholder="Vnesi znamko vozila" />
+            <div class="col-10 col-m-10"></div>
+            <div class="col-2 col-m-2" style="font-size:300%">
+                Išči vozilo:<input id="iskanje" type="text" name="iskalnik" align="left" maxlength="19" size="20" placeholder="Vnesi znamko vozila"/>
             </div>
         </div>
     </div>
     
     <nav>
         <div class="row">
-            <div class="col-12 menu">
+            <div class="col-12 col-m-12 menu">
                 <ul>
-                    <li><a herf="#inedx">Domov</a></li>
-                    <li><a herf="#moja_vozila">Moja vozila</a></li>
-                    <li><a herf="#top_10">Top 10</a>
-                        <ul>
-                            <li><a herf="#najb_10">Najboljših 10</a></li>
-                            <li><a herf="#najs_10">Najslabših 10</a></li>
-                        </ul>
-                    </li>
-                    <li><a herf="#racunalo">Računalo potnih stroškov</a></li>
-                    <li><a herf="#nas">O nas</a></li>
+                    <li><a href="index.html">Domov</a></li>
+                    <li><a href="#moja_vozila">Moja vozila</a></li>
+                    <li><a href="#najb_10">Najbolj ekonomični</a></li>
+                    <li><a href="#najs_10">Najmanj ekonomični</a></li>
+                    <li><a href="#racunalo">Računalo potnih stroškov</a></li>
+                    <li><a href="nas.html">O nas</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
+    <div class="row" id="centralna_ploskev">
+        <div class="col-1 col-m-0"></div>
+        <div class="col-5 col-m-6">
+            <div>
+                <table id="cene" style="width:100%">
+                    <caption><b>Cene goriv</b></caption>
+                    <tr>
+                        <th>Gorivo</th>
+                        <th>Cena (€)</th>
+                    </tr>
+                    <tr>
+                        <td>Bencin 95</td>
+                        <td>1.245</td>
+                    </tr>
+                    <tr>
+                        <td>Bencin 100</td>
+                        <td>1.316</td>
+                    </tr>
+                    <tr>
+                        <td>Dizel</td>
+                        <td>1.149</td>
+                    </tr>
+                    <tr>
+                        <td>Elektrika (kwh)</td>
+                        <td>0.07319</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-5 col-m-6"></div>
+                <img src="Graph-going-up.png" style="max-width: 25%; height:auto"></img>
+        <div class="col-1 col-m-0"></div>
+    </div>
+    <div class="row" id="centralna_ploskev">
+        <div class="col-1 col-m-0"></div>
+        <div class="col-10 col-m-12">
+            <div class="uporabik">
+                 <table style="width:100%">
+                    <caption><b>Naključni Uporabnik</b></caption>
+                    <tr>
+                        <td>Uporabniško ime:</td>
+                        <td>cene555</td>
+                    </tr>
+                    <tr>
+                        <td>Tip voznika:</td>
+                        <td>Nedeljski</td>
+                    </tr>
+                    <tr>
+                        <td>Vozilo:</td>
+                        <td>Citroen C3 1.2</td>
+                    </tr>
+                    <tr>
+                        <td>Gorivo:</td>
+                        <td>Dizel</td>
+                    </tr>
+                    <tr>
+                        <td>Povprečna poraba: (l/100km)</td>
+                        <td>3.5</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-1 col-m-0"></div>
+    </div>
+    <footer>Copyright © Luka Krhlikar SP(2016/17)</footer>
 
 </body>
 </html>
