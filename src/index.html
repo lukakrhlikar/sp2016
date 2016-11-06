@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title></title>
-      <meta charset="UTF-8">
-    </head>
-    <style>
-        #p01 {
-            margin: 5%;
-            border: 5px solid rgb(90,90,90);
-        }
-        
-    </style>
-    <!-- This is a comment -->
-    <body sytle="background-color:white;">
-        <p><h1 id="p01" style="font-size:500%;text-align:center;background-color:rgb(255, 165, 0);color:rgb(90,90,90);" >PORABA</h1></p>
-        
-        <p id="p01" style="text-align:center;"><a href="http://www.google.com" style="font-family:courier;font-size:150%;"><b><mark>Google</mark></b></a></p>
-        
-        <hr id="p01">
-        <p id="p01" title="Slikca kanistra, ki se povecuje in manjsa! " style="background-color:rgb(255, 165, 0);color:white;font-family:courier;">
-        <img src="red_gasoline.png" alt="Gas canister" width="25%" height="15%"></img>
-        <strong>Rdeča posoda za gorivo.</strong>
-        </p>
-        <br>
-    </body>
+<head>
+    <title>Poraba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css_index.css">
+</head>
+<body>
+    <div class="header">
+        <div class="row">
+            <div class="col-4 naslov">
+                <h1>Poraba</h1>
+            </div>
+            <div class="col-6"></div>
+            <div class="col-2">
+                Prijavi se: <button type="button">Prijava</button>
+            </div>
+            <div class="col-6"></div>
+            <div class="col-2">
+                Registriraj se: <button type="button">Registracija</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10"></div>
+            <div class="col-2">
+                Išči vozilo:<input type="text" name="iskalnik" maxlength="15" size="14" placeholder="Vnesi znamko vozila" />
+            </div>
+        </div>
+    </div>
+    
+    <nav>
+        <div class="row">
+            <div class="col-12 menu">
+                <ul>
+                    <li><a herf="#inedx">Domov</a></li>
+                    <li><a herf="#moja_vozila">Moja vozila</a></li>
+                    <li><a herf="#top_10">Top 10</a>
+                        <ul>
+                            <li><a herf="#najb_10">Najboljših 10</a></li>
+                            <li><a herf="#najs_10">Najslabših 10</a></li>
+                        </ul>
+                    </li>
+                    <li><a herf="#racunalo">Računalo potnih stroškov</a></li>
+                    <li><a herf="#nas">O nas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+</body>
 </html>
