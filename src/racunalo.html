@@ -3,7 +3,7 @@
 <head>
     <title>Poraba</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"gits  type="text/css" href="css_index.css">
+    <link rel="stylesheet" gits  type="text/css" href="css_index.css">
     <meta charset="UTF-8">
 </head>
 <body>
@@ -44,43 +44,42 @@
         </div>
     </nav>
     <div class="row" id="centralna_ploskev">
-        <div class="col-12 col-m-12">
-            <div>
-                <table id="cene" style="width:100%">
-                    <caption><b>Najbolj ekonomični avtomobili</b></caption>
-                    <tr>
-                        <th>Vozilo</th>
-                        <th>Gorivo</th>
-                        <th>Poraba (l/100km)</th>
-                    </tr>
-                    <tr>
-                        <td>VW Golf 1.6</td>
-                        <td>Dizel</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Mercedes A 180</td>
-                        <td>Dizel</td>
-                        <td>3.8</td>
-                    </tr>
-                    <tr>
-                        <td>Audi A3 2.0</td>
-                        <td>Dizel</td>
-                        <td>3.9</td>
-                    </tr>
-                    <tr>
-                        <td>Mercedes B180</td>
-                        <td>Dizel</td>
-                        <td>4.2</td>
-                    </tr>
-                    <tr>
-                        <td>Mercedes A 200</td>
-                        <td>Dizel</td>
-                        <td>4.6</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+       <h2 id="besedilo_vnos" style="text-align:center">Računalo potnih stroškov</h2>
+       <div style="margin:5px;">
+           Razdalja: <input id="vnos" type="text" name="razdalja" placeholder="500" title="Stevilo kilometrov"/> km
+           <br>
+           Tip goriva: <select>
+                          <option value="1,245">Bencin 95</option>
+                          <option value="1,316">Bencin 100</option>
+                          <option value="1,149">Dizel</option>
+                          <option value="0,07319">Elektrika</option>
+                        </select>
+           <br>
+           Povprečna poraba: <input id="vnos" type="text" name="poraba" placeholder="3,4" title="Vnesi povprečno porabo"/> l/100km ali kwh/100km
+           <br>
+           Število potnikov: <select>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                        </select>
+           <br>
+           Teža tovora: <select>
+                          <option value="0,3">manj od 100 kg</option>
+                          <option value="0,5">med 100 in 200 kg</option>
+                          <option value="1">več kot 200 kg</option>
+                        </select>
+           <br>
+           <button id ="gumb-pp" type="button" onclick="izracunaj">Izračunaj</button>
+           
+           <br>
+           Cena: <output  name="cena">50.3</output>€
+           
+       </div>
+       
     </div>
     <footer>Copyright © Luka Krhlikar SP(2016/17)</footer>
 

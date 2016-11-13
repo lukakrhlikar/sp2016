@@ -3,7 +3,7 @@
 <head>
     <title>Poraba</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"gits  type="text/css" href="css_index.css">
+    <link rel="stylesheet" gits  type="text/css" href="css_index.css">
     <meta charset="UTF-8">
 </head>
 <body>
@@ -44,42 +44,15 @@
         </div>
     </nav>
     <div class="row" id="centralna_ploskev">
-        <div class="col-12 col-m-12">
-            <div>
-                <table id="cene" style="width:100%">
-                    <caption><b>Najbolj ekonomični avtomobili</b></caption>
-                    <tr>
-                        <th>Vozilo</th>
-                        <th>Gorivo</th>
-                        <th>Poraba (l/100km)</th>
-                    </tr>
-                    <tr>
-                        <td>VW Golf 1.6</td>
-                        <td>Dizel</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Mercedes A 180</td>
-                        <td>Dizel</td>
-                        <td>3.8</td>
-                    </tr>
-                    <tr>
-                        <td>Audi A3 2.0</td>
-                        <td>Dizel</td>
-                        <td>3.9</td>
-                    </tr>
-                    <tr>
-                        <td>Mercedes B180</td>
-                        <td>Dizel</td>
-                        <td>4.2</td>
-                    </tr>
-                    <tr>
-                        <td>Mercedes A 200</td>
-                        <td>Dizel</td>
-                        <td>4.6</td>
-                    </tr>
-                </table>
-            </div>
+        <div style="margin:10px;text-align:center;">
+            <form class="prijava" method="POST" action="/reg">
+                <h2 style="text-align:center;color:rgb(255, 165, 0);">Prijava</h2>
+                <label id="besedilo_vnos">Uporabniško ime:</label> <br><input id="vnos" name="uporabnisko" title="Vpišite uporabniško ime" placeholder="Uporabniško ime" required/><br>
+                <label id="besedilo_vnos">Vaše geslo:</label> <br><input id="vnos" type="geslo" name="user" placeholder="Geslo dolžine 8 znakov" title="Vpišite geslo" required />
+                <br>
+                <label><input type="submit" value="Prijava" id="gumb-pp" /></label>
+                <br>
+            </form>
         </div>
     </div>
     <footer>Copyright © Luka Krhlikar SP(2016/17)</footer>
