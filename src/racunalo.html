@@ -46,37 +46,56 @@
     <div class="row" id="centralna_ploskev">
        <h2 id="besedilo_vnos" style="text-align:center">Računalo potnih stroškov</h2>
        <div style="margin:5px;">
-           Razdalja: <input id="vnos" type="text" name="razdalja" placeholder="500" title="Stevilo kilometrov"/> km
+           Razdalja: <input id="vnos_razdalja" type="text" name="razdalja" placeholder="500" title="Stevilo kilometrov"/> km
            <br>
-           Tip goriva: <select>
+           Tip goriva: <select id="tip_goriva">
                           <option value="1,245">Bencin 95</option>
                           <option value="1,316">Bencin 100</option>
                           <option value="1,149">Dizel</option>
                           <option value="0,07319">Elektrika</option>
                         </select>
            <br>
-           Povprečna poraba: <input id="vnos" type="text" name="poraba" placeholder="3,4" title="Vnesi povprečno porabo"/> l/100km ali kwh/100km
+           Povprečna poraba: <input ids="vnos_poraba" type="text" name="poraba" placeholder="3,4" title="Vnesi povprečno porabo"/> l/100km ali kwh/100km
            <br>
-           Število potnikov: <select>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
+           Število potnikov: <select id="potniki">
+                          <option value="0,1">1</option>
+                          <option value="0,3">2</option>
+                          <option value="0,4">3</option>
+                          <option value="0,5">4</option>
+                          <option value="0,6">5</option>
+                          <option value="0,7">6</option>
+                          <option value="0,8">7</option>
                         </select>
            <br>
-           Teža tovora: <select>
+           Teža tovora: <select id="teza">
                           <option value="0,3">manj od 100 kg</option>
                           <option value="0,5">med 100 in 200 kg</option>
                           <option value="1">več kot 200 kg</option>
                         </select>
            <br>
-           <button id ="gumb-pp" type="button" onclick="izracunaj">Izračunaj</button>
-           
+           <button id ="gumb-pp" type="button" onclick="izracunaj()">Izračunaj</button>
+           <script>
+                function izracunaj() {
+                    var d= document.getElementById("vnos_razdalja");
+                    var e = document.getElementById("tip_goriva");
+                    var gorivo = e.options[e.selectedIndex].value;
+                    var po= document.getElementById("vnos_poraba");
+                    var e = document.getElementById("potniki");
+                    var sp = e.options[e.selectedIndex].value;
+                    var e = document.getElementById("teza");
+                    var kt = e.options[e.selectedIndex].value;
+                    var rez = (((d/100) * (po + sp +kt)) * gorivo)
+                    /*document.getElementById("cena").innerHTML = rez;*/
+                    console.log(d);
+                    console.log(gorivo);
+                    console.log(po);
+                    console.log(sp);
+                    console.log(kt);
+                    console.log(rez);
+                }
+            </script>
            <br>
-           Cena: <output  name="cena">50.3</output>€
+           Cena: <p  name="cena" placeholder="50.3"></p>€
            
        </div>
        

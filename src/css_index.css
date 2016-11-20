@@ -17,7 +17,7 @@
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
     /* For desktop: */
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
@@ -37,9 +37,9 @@
     }
     
 }
-@media only screen and (max-width: 600px){
+@media only screen and (min-width: 414px){
     [class*="col-"] {
-        width: 100%;
+        width: 100%; /*ce dam vw se vse pokvar*/
     }
 }
 
@@ -65,7 +65,7 @@ placeholder{
 #gumb-header{
     background-color: white; /* Green */
     border: 0px;
-    color: rgb(255, 165, 0);
+    color: rgb(50,50,50);
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -110,7 +110,7 @@ placeholder{
     border: 0px;
     margin: 10px;
 }
-#vnos{
+#vnos+*{
     height:25px;
     padding: 16px 32px;
     font-size: 16px;
@@ -185,3 +185,19 @@ text-align: left;
      border: 2px solid rgb(50,50,50);
 }
 
+
+
+#nisemrobot{
+    display: none;
+    
+}
+
+/*
+todo:       margin reg pa prijava
+            gumb izracun
+            javascript zemljevidi
+            graf??
+            
+
+
+*/

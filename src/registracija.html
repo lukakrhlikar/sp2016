@@ -44,18 +44,24 @@
         </div>
     </nav>
     <div class="row" id="centralna_ploskev">
-        <div style="margin:10px;text-align:center;">
+        <div style="text-align:center;">
             <form class="registracija" method="POST" action="/reg">
                 <h2 style="text-align:center;color:rgb(255, 165, 0);">Registracija</h2>
                 <div id="besedilo_vnos">
-                    Za uporabo Mojih vozil je potrebna registracija oziroma prijava v kolikor ste že obstoječi uporabnik.
+                    Za uporabo Mojih vozil je potrebna registracija oziroma <a href="prijava.html">prijava</a> v kolikor ste že obstoječi uporabnik.
                 </div>
                 <br>
                 <label id="besedilo_vnos">Vaše ime in priimek:</label> <br><input id="vnos" type="text" name="user" pattern=".* .*" title="Vpišite dve besedi" placeholder="Janez Novak" required /><br>
                 <label id="besedilo_vnos">Vaš email:</label> <br><input id="vnos" type="email" name="user" placeholder="janez.novak@gmail.com" required /><br>
                 <label id="besedilo_vnos">Uporabniško ime:</label> <br><input id="vnos" name="uporabnisko" title="Vpišite uporabniško ime" placeholder="janeznovak55" required/><br>
-                <label id="besedilo_vnos">Vaše geslo:</label> <br><input id="vnos" type="geslo" name="user" placeholder="Geslo dolžine 8 znakov" title="Vpišite geslo" required />
-                <br><label class="no-fixed-width"><input type="checkbox" required /><b id="besedilo_vnos">Nisem robot</b></label><br>
+                <label id="besedilo_vnos">Vaše geslo:</label> <br><input id="vnos" type="password" name="user" placeholder="Geslo dolžine 8 znakov" title="Vpišite geslo" maxlength="8" required />
+                <br>
+                <label>
+                    <input type="checkbox" id="robot" required />
+                    <b id="besedilo_vnos">Nisem robot
+                        <div id="nisemrobot">Če nisi robot klikni registracija.</div>
+                    </b>
+                </label><br>
                 <label><input type="submit" id="gumb-pp" value="Registracija" /></label>
                 <br>
             </form>
