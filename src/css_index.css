@@ -58,7 +58,7 @@ body {
     }
     
 }
-@media only screen and (min-width: 414px){
+@media only screen and (min-width: 441px){
     [class*="col-"] {
         width: 100%; /*ce dam vw se vse pokvar*/
         float: left;
@@ -228,7 +228,7 @@ footer{
 }
 ul {
     list-style-type: none;
-    margin-left: 0px;
+    margin: 0px;
     padding: 0px;
     overflow: auto;
 }
