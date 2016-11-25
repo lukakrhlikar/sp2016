@@ -33,6 +33,10 @@ body {
     .col-m-10 {width: 83.33%;}
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
+    [class*="col-"] {
+        float: left;
+        padding: 15px;
+    }
 }
 @media only screen and (min-width: 1024px) {
     /* For desktop: */
@@ -57,6 +61,8 @@ body {
 @media only screen and (min-width: 414px){
     [class*="col-"] {
         width: 100%; /*ce dam vw se vse pokvar*/
+        float: left;
+        padding: 15px;
     }
 }
 
@@ -115,7 +121,7 @@ placeholder {
 #gumb-pp{
     background-color: white; /* Green */
     border: 0px;
-    color: rgb(255, 165, 0);
+    color: rgb(50, 50, 50);
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -128,6 +134,26 @@ placeholder {
 }
 
 #gumb-pp:hover {
+    background-color: #ffa500;
+    color: white;
+    cursor: pointer;
+}
+
+#slikaj{
+    background-color: white; /* Green */
+    border: 0px;
+    color: rgb(255, 165, 0);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 250px;
+    margin:2px;
+    transition: .4s all;
+}
+#slikaj:hover {
     background-color: #ffa500;
     color: white;
     cursor: pointer;
@@ -257,7 +283,6 @@ text-align: left;
 }
 
 
-
 #nisemrobot{
     display: none;
     
@@ -268,6 +293,44 @@ text-align: left;
     
 }
 
+#gumb-pp-slika {
+    background-color: white; /* Green */
+    border: 0px;
+    color: rgb(255, 165, 0);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 250px;
+    margin:2px;
+    transition: .4s all;
+}
+
+#gumb-pp-slika:hover {
+    background-color: #ffa500;
+    color: white;
+    cursor: pointer;
+}
+
+
+.podnaslovh2 {
+    text-align:center;
+    color:rgb(255, 165, 0);
+}
+
+.centerTextA {
+    text-align: center;
+}
+
+.barva {
+    color:rgb(255, 165, 0);
+}
+
+.font18 {
+    font-size: 18px;
+}
 /*
 todo:       margin reg pa prijava
             gumb izracun

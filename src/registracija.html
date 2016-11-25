@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html  xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <title>Poraba</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" gits  type="text/css" href="css_index.css">
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin-ext" rel="stylesheet">
+    <script type="text/javascript" src="functions.js"></script>
 </head>
 <body>
     <div class="header">
@@ -44,9 +45,9 @@
         </div>
     </nav>
     <div class="row" id="centralna_ploskev">
-        <div style="text-align:center;">
+        <div class="centerTextA">
             <form class="registracija" method="POST" action="/reg">
-                <h2 style="text-align:center;color:rgb(255, 165, 0);">Registracija</h2>
+                <h2 class="podnaslovh2">Registracija</h2>
                 <div id="besedilo_vnos">
                     Za uporabo Mojih vozil je potrebna registracija oziroma <a href="prijava.html">prijava</a> v kolikor ste že obstoječi uporabnik.
                 </div>
@@ -59,7 +60,7 @@
                           <option value="pov">Povprečen</option>
                           <option value="ned">Nedeljski</option>
                           <option value="eko">Eko</option>
-                          <option value="hitro">Voznika s težko nogo</option>
+                          <option value="hitro">Voznik s težko nogo</option>
                         </select>
                    <br>
                 <label id="besedilo_vnos">Vaše geslo:</label> <br><input id="vnos" type="password" name="user" placeholder="Geslo dolžine 8 znakov" title="Vpišite geslo" maxlength="8" required /></br>
@@ -74,9 +75,22 @@
                 <label><input type="submit" id="gumb-pp" value="Registracija" /></label>
                 <br>
             </form>
+            <div>
+                    <label><input type="button" id="gumb-pp-slika" onclick="showSlika()" value="Posnemi fotografijo" /></label>
+                </div>
+                <div id="div-slikaj" hidden>
+                    <video id="video" width="140" height="140" autoplay></video><p/>
+                    <button id="slikaj">Posnemi sliko</button><p/>
+                    <canvas id="slika" width="140" height="140"></canvas><p/>
+                    <script >
+                        window.addEventListener("DOMContentLoaded",doVideo,false);
+                        document.getElementById("slikaj").addEventListener("click", paintCapture,false);
+                    </script>
+                </div>
         </div>
     </div>
     <footer>Copyright © Luka Krhlikar SP(2016/17)</footer>
+    
 
 </body>
 </html>

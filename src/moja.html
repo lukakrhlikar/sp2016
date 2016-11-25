@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poraba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" gits  type="text/css" href="css_index.css">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin-ext" rel="stylesheet">
+</head>
+<body onload="load()">
+    <div class="header">
+        <div class="row">
+            <div class="col-7 col-m-7 crta">
+                <h1><a id="naslov1" href="index.html">Poraba</a></h1>
+            </div>
+            <div class="col-7 col-m-7 crta">
+                <b class="header-title">Spletna stran namenjena vsem ljudem, ki menijo, da jih avtoindustirja zavaja ali pa bi le želeli bolj podrobno spremljati porabo Vašega vozila.</b>
+            </div>
+            <div class="col-5 col-m-5">
+                <button id ="gumb-header" type="button" onclick="location.href='prijava.html';">Prijava</button>
+            </div>
+            <div class="col-7 col-m-7"></div>
+            <div class="col-5 col-m-5">
+                <button id ="gumb-header" type="button" onclick="location.href='registracija.html';">Registracija</button>
+            </div>
+            <div class="col-7 col-m-7">
+                <input id="iskanje" type="text" name="iskalnik" align="left" maxlength="25" size="16px" placeholder="Preišči znamke vozil"/>
+            </div>
+        </div>
+    </div>
+    
+    <nav>
+        <div class="row">
+            <div class="col-12 col-m-12 menu">
+                <ul>
+                    <li><a href="index.html">Domov</a></li>
+                    <li><a href="moja.html">Moja vozila</a></li>
+                    <li><a href="najb_10.html">Najbolj ekonomični</a></li>
+                    <li><a href="najs_10.html">Najmanj ekonomični</a></li>
+                    <li><a href="racunalo.html">Računalo potnih stroškov</a></li>
+                    <li><a href="nas.html">O nas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row" id="centralna_ploskev">
+        <div class="row" id="centralna_ploskev">
+            <div class="col-1 col-m-1">
+                <b class="podnaslovh2">Moji avtomobili</b>
+            </div>
+            <div class="col-10 col-m-10">
+             <label><input type="button" id="gumb-pp" onclick="showDodajAvtomobil()" value="Dodaj avtomobil" /></label>
+             </div>
+             <div class="col-1 col-m-1 font18">
+                  <p><b class="header-title">Dodaj avtomobil in njegovo povprečno porabo.</b></p>
+              </div>
+        </div>
+        <div class="row" id="centralna_ploskev">
+            <div id="dodajvozilo-div" hidden class="col-5 col-m-6 barva">
+                Avtomobil:  <input id="vnosZnamkaMojaVozila" type="text" name="vozilo" placeholder="VW Golf 1.2 tdi" title="Znamka Model"/>
+                </br>
+                Povprečna poraba:  <input id="vnosPrabaMojaVozila" type="text" name="poraba" placeholder="3.6" title="Povprečna poraba goriva"/>
+                </br>
+                Tip goriva: 
+                <form action="">
+                  <input type="radio" id="radioBD" name="gorivo" value="tek" title="Izberite tip goriva">Bencin, Dizel<br>
+                  <input type="radio" id="radioEl" name="gorivo" value="el" title="Izberite tip goriva">Elektrika<br>
+                </form>
+                </br>
+                <label><input type="button" id="gumb-pp" onclick="dodajVozilo()" value="Dodaj avtomobil"/></label>
+            </div>
+        </div>
+    <div class="row" id="centralna_ploskev">
+        <div class="col-12 col-m-12">
+            <div class="uporabik">
+                <table id="mojA" style="width:100%">
+                    <caption><b>Moji avtomobili</b></caption>
+                    <tr>
+                        <th>Znamka</th>
+                        <th>Poraba (l)</th>
+                        <th>Poraba (kwh)</th>
+                    </tr>
+                    <tr>
+                        <td>Mercedes a200 d</td>
+                        <td>6.5</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Mercedes b180 d</td>
+                        <td>6.2</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>e-Golf</td>
+                        <td>0</td>
+                        <td>13.5</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>    
+    <div class="row" id="centralna_ploskev">
+        <div class="col-1 col-m-1 barva">
+            <label><input type="button" id="gumb-pp" onclick="showDodajPorabo()" value="Dodaj porabo" /></label>
+        </div>
+        <div class="col-11 col-m-11">
+            <div id="dodajporabo-div" hidden class="col-5 col-m-6 barva">
+                <label class="font18">Količina goriva: <input id="vnoskolicinagoriva" type="text" name="gorivo" placeholder="34.5" title="Natočena količina"/>l/100km ali kwh/100km</label>
+                </br>
+                <label class="font18">Tip goriva: <select id="tip_goriva1">
+                          <option value="1.245">Bencin 95</option>
+                          <option value="1.316">Bencin 100</option>
+                          <option value="1.149">Dizel</option>
+                          <option value="0.07319">Elektrika</option>
+                </select></label>
+                </br>
+                <label class="font18">Prevoženi kilometri: <input id="vnosPrevozenihKM" type="text" name="kilometri" placeholder="104" title="Prevoženi kilometri s količino goriva"/>km</label>
+                </br>
+                <button id="gumb-pp" type="button" onclick="izracunajMojaVozila()">Izračunaj</button></label>
+                </br>
+                <label class="font18">Povprečna poraba poti: <span id="povprecnaPorabaPoti">-</span> l/100km ali kwh/100km</label>
+                </br>
+                <label class="font18">Strošek: <span id="strosek">-</span>€</label>
+                </br>
+                <label class="font18">Strošek na 100 kilometrov: <span id="strosek100">-</span> €</label>
+                </br>
+                <label class="font18">Povprečna poraba: <span id="novaPorvprecnaPoraba">-</span> l/100km ali kwh/100km</label>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>Copyright © Luka Krhlikar SP(2016/17)</footer>
+    <script type="text/javascript" src="functions.js"></script>
+</body>
+</html>
