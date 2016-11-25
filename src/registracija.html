@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" gits  type="text/css" href="css_index.css">
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin-ext" rel="stylesheet">
 </head>
 <body>
     <div class="header">
         <div class="row">
-            <div class="col-7 col-m-7" style="border-bottom:solid;border-bottom-width:1px;">
+            <div class="col-7 col-m-7 crta">
                 <h1><a id="naslov1" href="index.html">Poraba</a></h1>
             </div>
-            <div class="col-5 col-m-5"></div>
-            <div class="col-7 col-m-7" style="border-bottom:solid;border-bottom-width:1px;">
-                <b style="margin:10px;">Spletna stran namenjena vsem ljudem, ki menijo, da jih avtoindustirja zavaja ali pa bi le želeli bolj podrobno spremljati porabo Vašega vozila.</b>
+            <div class="col-7 col-m-7 crta">
+                <b class="header-title">Spletna stran namenjena vsem ljudem, ki menijo, da jih avtoindustirja zavaja ali pa bi le želeli bolj podrobno spremljati porabo Vašega vozila.</b>
             </div>
             <div class="col-5 col-m-5">
                 <button id ="gumb-header" type="button" onclick="location.href='prijava.html';">Prijava</button>
@@ -54,7 +54,16 @@
                 <label id="besedilo_vnos">Vaše ime in priimek:</label> <br><input id="vnos" type="text" name="user" pattern=".* .*" title="Vpišite dve besedi" placeholder="Janez Novak" required /><br>
                 <label id="besedilo_vnos">Vaš email:</label> <br><input id="vnos" type="email" name="user" placeholder="janez.novak@gmail.com" required /><br>
                 <label id="besedilo_vnos">Uporabniško ime:</label> <br><input id="vnos" name="uporabnisko" title="Vpišite uporabniško ime" placeholder="janeznovak55" required/><br>
-                <label id="besedilo_vnos">Vaše geslo:</label> <br><input id="vnos" type="password" name="user" placeholder="Geslo dolžine 8 znakov" title="Vpišite geslo" maxlength="8" required />
+                <label id="besedilo_vnos">Tip voznika:</label></br>
+                <select id="tip_voznika" required>
+                          <option value="pov">Povprečen</option>
+                          <option value="ned">Nedeljski</option>
+                          <option value="eko">Eko</option>
+                          <option value="hitro">Voznika s težko nogo</option>
+                        </select>
+                   <br>
+                <label id="besedilo_vnos">Vaše geslo:</label> <br><input id="vnos" type="password" name="user" placeholder="Geslo dolžine 8 znakov" title="Vpišite geslo" maxlength="8" required /></br>
+                <label id="besedilo_vnos">Ponovno vnesite geslo: </label> <br><input id="vnos" type="password" name="user" placeholder="Ponovi geslo" title="Ponovno vpišite geslo" maxlength="8" required />
                 <br>
                 <label>
                     <input type="checkbox" id="robot" required />
