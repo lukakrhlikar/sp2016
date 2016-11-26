@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Poraba</title>
+    <title>Poraba-Najslabši</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"gits  type="text/css" href="css_index.css">
+    <link rel="stylesheet" type="text/css" href="css_index.css">
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin-ext" rel="stylesheet">
 </head>
@@ -17,14 +17,14 @@
                 <b class="header-title">Spletna stran namenjena vsem ljudem, ki menijo, da jih avtoindustirja zavaja ali pa bi le želeli bolj podrobno spremljati porabo Vašega vozila.</b>
             </div>
             <div class="col-5 col-m-5">
-                <button id ="gumb-header" type="button" onclick="location.href='prijava.html';">Prijava</button>
+                <button class="gumb-header" type="button" onclick="location.href='prijava.html';">Prijava</button>
             </div>
             <div class="col-7 col-m-7"></div>
             <div class="col-5 col-m-5">
-                <button id ="gumb-header" type="button" onclick="location.href='registracija.html';">Registracija</button>
+                <button class="gumb-header" type="button" onclick="location.href='registracija.html';">Registracija</button>
             </div>
             <div class="col-7 col-m-7">
-                <input id="iskanje" type="text" name="iskalnik" align="left" maxlength="25" size="16px" placeholder="Preišči znamke vozil"/>
+                <input id="iskanje" type="text" name="iskalnik" maxlength="25" size="16" placeholder="Preišči znamke vozil" />
             </div>
         </div>
     </div>
@@ -32,6 +32,7 @@
     <nav>
         <div class="row">
             <div class="col-12 col-m-12 menu">
+                 <div class="navigation" onclick="toogleMenu()">MENU ☰</div>
                 <ul>
                     <li><a href="index.html">Domov</a></li>
                     <li><a href="moja.html">Moja vozila</a></li>
@@ -43,10 +44,11 @@
             </div>
         </div>
     </nav>
-    <div class="row" id="centralna_ploskev">
-        <div class="col-12 col-m-12">
+    <div class="row centralna_ploskev">
+        <div class="col-12 col-m-12"></div>
+        <div class="col-12 col-m-12 uporabik">
             <div>
-                <table id="cene" style="width:100%">
+                <table id="cene" class="uporabik" style="width:100%">
                     <caption><b>Najmanj ekonomični avtomobili</b></caption>
                     <tr>
                         <th>Vozilo</th>

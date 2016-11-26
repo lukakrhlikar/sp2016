@@ -4,6 +4,8 @@ function load() {
  
  
 function izracunaj() {
+    
+    
     var razdalja = parseFloat(document.getElementById("vnos_razdalja").value);
     var e = document.getElementById("tip_goriva");
     var gorivo = parseFloat(e.options[e.selectedIndex].value);
@@ -14,7 +16,8 @@ function izracunaj() {
     var kt = parseFloat(e.options[e.selectedIndex].value);
     var rez = (((razdalja/100) * (po + sp +kt)) * gorivo);
     rez=rez.toFixed(2)
-    document.getElementById("cena").innerHTML = rez;
+    
+    if (!isNaN(rez))  document.getElementById("cena").innerHTML = rez;
 }
 
 function izracunajMojaVozila() {
@@ -28,16 +31,17 @@ function izracunajMojaVozila() {
     var staraPoraba = 6.5;
     var novaPoraba = (staraPoraba + poraba) / 2;
     
-    console.log(poraba);
-    console.log(strosek);
-    console.log(strosekNaSTO);
-    console.log(staraPoraba);
-    document.getElementById("povprecnaPorabaPoti").innerHTML = poraba.toFixed(2);
-    document.getElementById("strosek").innerHTML = strosek.toFixed(2);
-    document.getElementById("strosek100").innerHTML = strosekNaSTO.toFixed(2);
-    document.getElementById("novaPorvprecnaPoraba").innerHTML = novaPoraba.toFixed(2);
+    if (!isNaN(poraba)) document.getElementById("povprecnaPorabaPoti").innerHTML = poraba.toFixed(2);
+    if (!isNaN(strosek)) document.getElementById("strosek").innerHTML = strosek.toFixed(2);
+    if (!isNaN(strosekNaSTO)) document.getElementById("strosek100").innerHTML = strosekNaSTO.toFixed(2);
+    if (!isNaN(novaPoraba)) document.getElementById("novaPorvprecnaPoraba").innerHTML = novaPoraba.toFixed(2);
 
     
+}
+
+function toogleMenu() {
+    var menu = document.querySelector('.menu ul');
+    menu && menu.classList.toggle('open');
 }
 
 function openStream(stream){
@@ -74,14 +78,21 @@ function showDodajPorabo() {
 }
 
 function dodajVozilo() {
+    
+    
+    var neki = document.getElementById("vnosZnamkaMojaVozila").value; 
+    var poraba = document.getElementById("vnosPrabaMojaVozila").value;
+    
+    if(isNaN(parseFloat(poraba)) ||  neki.trim().length == 0 || poraba.length == 0) return;
+    
     var table = document.getElementById("mojA");
     var row = table.insertRow(1);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     
-    cell1.innerHTML = document.getElementById("vnosZnamkaMojaVozila").value;
-    var poraba= document.getElementById("vnosPrabaMojaVozila").value;
+    cell1.innerHTML =neki;
+    
     if (document.getElementById("radioBD").checked == true){
         cell2.innerHTML = poraba.toString();
         cell3.innerHTML = '0';

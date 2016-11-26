@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  xmlns:fb="http://ogp.me/ns/fb#">
+<html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
-    <title>Poraba</title>
+    <title>Poraba-Registracija</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" gits  type="text/css" href="css_index.css">
+    <link rel="stylesheet"  type="text/css" href="css_index.css">
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin-ext" rel="stylesheet">
     <script type="text/javascript" src="functions.js"></script>
@@ -18,14 +18,14 @@
                 <b class="header-title">Spletna stran namenjena vsem ljudem, ki menijo, da jih avtoindustirja zavaja ali pa bi le želeli bolj podrobno spremljati porabo Vašega vozila.</b>
             </div>
             <div class="col-5 col-m-5">
-                <button id ="gumb-header" type="button" onclick="location.href='prijava.html';">Prijava</button>
+                <button class="gumb-header" type="button" onclick="location.href='prijava.html';">Prijava</button>
             </div>
             <div class="col-7 col-m-7"></div>
             <div class="col-5 col-m-5">
-                <button id ="gumb-header" type="button" onclick="location.href='registracija.html';">Registracija</button>
+                <button class="gumb-header" type="button" onclick="location.href='registracija.html';">Registracija</button>
             </div>
             <div class="col-7 col-m-7">
-                <input id="iskanje" type="text" name="iskalnik" align="left" maxlength="25" size="16px" placeholder="Preišči znamke vozil"/>
+                <input id="iskanje" type="text" name="iskalnik" maxlength="25" size="16" placeholder="Preišči znamke vozil" />
             </div>
         </div>
     </div>
@@ -33,6 +33,7 @@
     <nav>
         <div class="row">
             <div class="col-12 col-m-12 menu">
+                 <div class="navigation" onclick="toogleMenu()">MENU ☰</div>
                 <ul>
                     <li><a href="index.html">Domov</a></li>
                     <li><a href="moja.html">Moja vozila</a></li>
@@ -44,44 +45,42 @@
             </div>
         </div>
     </nav>
-    <div class="row" id="centralna_ploskev">
+    <div class="row centralna_ploskev">
         <div class="centerTextA">
             <form class="registracija" method="POST" action="/reg">
                 <h2 class="podnaslovh2">Registracija</h2>
-                <div id="besedilo_vnos">
+                <div class="besedilo_vnos">
                     Za uporabo Mojih vozil je potrebna registracija oziroma <a href="prijava.html">prijava</a> v kolikor ste že obstoječi uporabnik.
                 </div>
                 <br>
-                <label id="besedilo_vnos">Vaše ime in priimek:</label> <br><input id="vnos" type="text" name="user" pattern=".* .*" title="Vpišite dve besedi" placeholder="Janez Novak" required /><br>
-                <label id="besedilo_vnos">Vaš email:</label> <br><input id="vnos" type="email" name="user" placeholder="janez.novak@gmail.com" required /><br>
-                <label id="besedilo_vnos">Uporabniško ime:</label> <br><input id="vnos" name="uporabnisko" title="Vpišite uporabniško ime" placeholder="janeznovak55" required/><br>
-                <label id="besedilo_vnos">Tip voznika:</label></br>
+                <label class="besedilo_vnos">Vaše ime in priimek:</label> <br><input class="vnos" type="text" name="user" pattern=".* .*" title="Vpišite dve besedi" placeholder="Janez Novak" required /><br>
+                <label class="besedilo_vnos">Vaš email:</label> <br><input class="vnos" type="email" name="user" placeholder="janez.novak@gmail.com" required /><br>
+                <label class="besedilo_vnos">Uporabniško ime:</label> <br><input class="vnos" name="uporabnisko" title="Vpišite uporabniško ime" placeholder="janeznovak55" required/><br>
+                <label class="besedilo_vnos">Tip voznika:</label><br>
                 <select id="tip_voznika" required>
-                          <option value="pov">Povprečen</option>
-                          <option value="ned">Nedeljski</option>
-                          <option value="eko">Eko</option>
-                          <option value="hitro">Voznik s težko nogo</option>
+                            <option value="">Povprečen</option>
+                            <option value="ned">Nedeljski</option>
+                            <option value="eko">Eko</option>
+                            <option value="hitro">Voznik s težko nogo</option>
                         </select>
                    <br>
-                <label id="besedilo_vnos">Vaše geslo:</label> <br><input id="vnos" type="password" name="user" placeholder="Geslo dolžine 8 znakov" title="Vpišite geslo" maxlength="8" required /></br>
-                <label id="besedilo_vnos">Ponovno vnesite geslo: </label> <br><input id="vnos" type="password" name="user" placeholder="Ponovi geslo" title="Ponovno vpišite geslo" maxlength="8" required />
+                <label class="besedilo_vnos">Vaše geslo:</label> <br><input class="vnos" type="password" name="user" placeholder="Geslo dolžine 8 znakov" title="Vpišite geslo" maxlength="8" required /><br>
+                <label class="besedilo_vnos">Ponovno vnesite geslo: </label> <br><input class="vnos" type="password" name="user" placeholder="Ponovi geslo" title="Ponovno vpišite geslo" maxlength="8" required />
                 <br>
                 <label>
                     <input type="checkbox" id="robot" required />
-                    <b id="besedilo_vnos">Nisem robot
-                        <div id="nisemrobot">Če nisi robot klikni registracija.</div>
-                    </b>
+                    <b class="besedilo_vnos">Nisem robot</b>
                 </label><br>
-                <label><input type="submit" id="gumb-pp" value="Registracija" /></label>
+                <label><input type="submit" class="gumb-pp" value="Registracija" /></label>
                 <br>
             </form>
             <div>
                     <label><input type="button" id="gumb-pp-slika" onclick="showSlika()" value="Posnemi fotografijo" /></label>
                 </div>
                 <div id="div-slikaj" hidden>
-                    <video id="video" width="140" height="140" autoplay></video><p/>
-                    <button id="slikaj">Posnemi sliko</button><p/>
-                    <canvas id="slika" width="140" height="140"></canvas><p/>
+                    <video id="video" width="140" height="140" autoplay></video>
+                    <button id="slikaj">Posnemi sliko</button>
+                    <canvas id="slika" width="140" height="140"></canvas>
                     <script >
                         window.addEventListener("DOMContentLoaded",doVideo,false);
                         document.getElementById("slikaj").addEventListener("click", paintCapture,false);

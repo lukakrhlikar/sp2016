@@ -19,6 +19,41 @@ body {
    display: block;
 }
 
+
+
+.menu .navigation {
+    display: block;
+}
+
+.menu ul {
+        display: none;
+    }
+    
+@media only screen and (max-width: 554px ){
+     [class*="col-"] {
+        width: 100%; /*ce dam vw se vse pokvar*/
+        float: left;
+        padding: 15px;
+    }
+}
+
+@media only screen and (min-width: 850px ){
+   
+    
+    li {
+       float: left; 
+    }
+    
+    .menu ul {
+        display: block;
+    }
+    
+    .menu .navigation {
+        display: none;
+    }
+    
+}
+
 @media only screen and (min-width: 600px) {
     /* For tablets: */
     .col-m-1 {width: 8.33%;}
@@ -37,6 +72,7 @@ body {
         float: left;
         padding: 15px;
     }
+  
 }
 @media only screen and (min-width: 1024px) {
     /* For desktop: */
@@ -58,13 +94,13 @@ body {
     }
     
 }
-@media only screen and (min-width: 441px){
-    [class*="col-"] {
-        width: 100%; /*ce dam vw se vse pokvar*/
-        float: left;
-        padding: 15px;
-    }
+
+
+
+.menu ul.open {
+    display: block;
 }
+
 
 
 .row::after {
@@ -103,7 +139,7 @@ placeholder {
     color: #E4D3B5;
 }
 
-#gumb-header{
+.gumb-header{
     background-color: white; /* Green */
     border: 0px;
     color: rgb(50,50,50);
@@ -116,9 +152,15 @@ placeholder {
     width: 250px;
     float:right;
     margin:2px;
+    transition: .4s all;
 }
 
-#gumb-pp{
+.gumb-header:hover {
+    transform: rotateZ(2deg);
+    cursor: pointer;
+}
+
+.gumb-pp{
     background-color: white; /* Green */
     border: 0px;
     color: rgb(50, 50, 50);
@@ -133,7 +175,7 @@ placeholder {
     transition: .4s all;
 }
 
-#gumb-pp:hover {
+.gumb-pp:hover {
     background-color: #ffa500;
     color: white;
     cursor: pointer;
@@ -159,13 +201,7 @@ placeholder {
     cursor: pointer;
 }
 
-#gumb-header:hover {
-    transform: rotateZ(2deg);
-    cursor: pointer;
-}
-#gumb-header {
-    transition: .4s all;
-}
+
 
 #naslov1 {
    font-size:48px;
@@ -191,7 +227,8 @@ placeholder {
     background-position: 95% center;
 }
 
-#vnos+*{
+
+.vnos+*{
     height:25px;
     padding: 16px 32px;
     font-size: 16px;
@@ -203,7 +240,7 @@ placeholder {
     
 }
 
-#besedilo_vnos{
+.besedilo_vnos{
     font-size: 16px;
     color:rgb(255, 165, 0);
     margin: 0;
@@ -226,6 +263,7 @@ footer{
     background-color: rgb(50,50,50);
     color: rgb(255, 165, 0);
 }
+
 ul {
     list-style-type: none;
     margin: 0px;
@@ -235,7 +273,6 @@ ul {
 
 li {
     position: relative;
-    float: left;
 }
 
 li a {
@@ -250,12 +287,12 @@ li a:hover {
     display: block;
 }
 
-a{
+a {
     color: rgb(255, 165, 0);
 }
 
 table, th, td{
-    border: 1px solid rgb(50,50,50);
+    border: 2px solid rgb(50,50,50);
     border-collapse: collapse;
     color:rgb(255, 165, 0);
     
@@ -266,7 +303,7 @@ padding: 5px;
 text-align: left;
 }
 
-#centralna_ploskev{
+.centralna_ploskev{
     background-color: grey;
     flex-grow:1;
     padding: 0 20px;
@@ -275,6 +312,7 @@ text-align: left;
 .uporabik{
      border: 2px solid rgb(50,50,50);
      padding: 20px;
+     margin: 5px;
 }
 
 .uporabik caption b {
@@ -330,6 +368,17 @@ text-align: left;
 
 .font18 {
     font-size: 18px;
+}
+
+.slika-graf {
+    max-width: 100%;
+    min-width: 250px;
+    height: auto;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
 }
 /*
 todo:       margin reg pa prijava
