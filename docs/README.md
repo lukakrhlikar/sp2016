@@ -28,6 +28,8 @@ https://lukakrhlikar.github.io/sp2016/src
 
 ###Opis
 Spletna stran namenjena vsem ljudem, ki menijo, da jih avtoindustirja zavaja ali pa bi le želeli bolj podrobno spremljati porabo svojega avtomobila, izračunati stroške in si ogledati porabe drugih avtomobilov.
+V meniju lahko izberemo moja vozila in si tako lahko ogledamo porabo vozil, ki jih imamo. Za vozila lahko dodamo porabo oziroma izračunamo strošek, ki ga avtomobil proizvede. Dodamo lahko poljubno mnogo avtomobilov.
+Ogledamo si lahko najvarčnejše in najmanj varčne avtomobile. Prav tako pa lahko izračunamo strošek potovanja če se odločimo iti napotep z našim jeklenim konjičkom.
 
 ###Ciljna publika
 Vsi vozniki in bodoči vozniki, ki bi želeli podrobno spremljati porabo svojega jeklenega konjička.
@@ -41,4 +43,4 @@ Edino težavo, ki sem jo zaznal je pri brskalniku Edge pri strani registracija m
 * Dodaja porabe in avtomobila
 
 ###Komentarji
-Dodal bom še nekaj funkcionalnosti in html elementov v drugi fazi.
+V drugi fazi bom aplikacijo še dodelal, saj bi za določene komponente potreboval knjižnice, ki pa sedaj niso bile dovoljene. (Graf)
