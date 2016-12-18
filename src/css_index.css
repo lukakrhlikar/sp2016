@@ -31,7 +31,7 @@ body {
     
 @media only screen and (max-width: 554px ){
      [class*="col-"] {
-        width: 100%; /*ce dam vw se vse pokvar*/
+        width: 100%;
         float: left;
         padding: 15px;
     }
@@ -51,6 +51,7 @@ body {
     .menu .navigation {
         display: none;
     }
+    
     
 }
 
