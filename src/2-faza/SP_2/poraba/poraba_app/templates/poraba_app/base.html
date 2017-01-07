@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poraba-Domov</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'poraba_app/css/css_index.css' %}">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin-ext" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="row">
+            <div class="col-7 col-m-7 crta">
+                <h1><a id="naslov1" href="{% url 'index' %}">Poraba</a></h1>
+            </div>
+            <div class="col-7 col-m-7 crta">
+                <b class="header-title">Spletna stran namenjena vsem ljudem, ki menijo, da jih avtoindustirja zavaja ali pa bi le želeli bolj podrobno spremljati porabo Vašega vozila.</b>
+            </div>
+            {% if user.is_authenticated %}
+                <div class="col-7 col-m-7">
+                    <p><b>Prijavljeni kot uporabnik: <font color="black">{{ user.username }}</font></b></p>
+                </div>
+                <div class="col-5 col-m-5">
+                        <a href="{% url 'logout' %}"><button class="gumb-header" type="button" onclick="{% url 'prijava' %}">Odjava</button></a>
+                </div>
+
+            {% else %}
+                <div class="col-5 col-m-5">
+                    <a href="{% url 'prijava' %}"><button class="gumb-header" type="button" onclick="{% url 'prijava' %}">Prijava</button></a>
+                </div>
+                <div class="col-7 col-m-7"></div>
+                <div class="col-5 col-m-5">
+                    <a href="{% url 'registracija' %}"><button class="gumb-header" type="button" onclick="{% url 'registracija' %}">Registracija</button></a>
+                </div>
+
+            {% endif %}
+            <div class="col-12 col-m-12">
+                <form class="iskanje" method="GET" action="{% url 'iskanje' %}">
+                    {{ iskanjeForm.iskalni_niz }}
+                    <label><input type="submit" value="Išči" class="gumb-pp" /></label>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="row">
+            <div class="col-12 col-m-12 menu">
+                <div class="navigation" onclick="toogleMenu()">MENU ☰</div>
+                <ul>
+                    <li><a href="{% url 'index' %}">Domov</a></li>
+                    <li><a href="{% url 'moja' %}">Moja vozila</a></li>
+                    <li><a href="{% url 'najb_10' %}">Najbolj ekonomični</a></li>
+                    <li><a href="{% url 'najs_10' %}">Najmanj ekonomični</a></li>
+                    <li><a href="{% url 'racunalo' %}">Računalo potnih stroškov</a></li>
+                    <li><a href="{% url 'o_nas' %}">O nas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block main %}
+    {% endblock %}
+    <footer>Copyright © Luka Krhlikar SP(2016/17)</footer>
+    <script src="{% static 'poraba_app/js/functions.js' %}" type="text/javascript"></script>
+</body>
+</html>

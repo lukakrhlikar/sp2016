@@ -1,0 +1,40 @@
+{% extends "poraba_app/base.html" %}
+{% load static %}
+
+{% block main %}
+<div class="row centralna_ploskev">
+        <div class="centerTextA">
+            <form class="registracija" method="POST" action="#">
+                <h2 class="podnaslovh2">Registracija</h2>
+                <div class="besedilo_vnos">
+                    Za uporabo Mojih vozil je potrebna registracija oziroma <a href="{% url 'prijava' %}">prijava</a> v kolikor ste že obstoječi uporabnik.
+                </div>
+                <br>
+                {% csrf_token %}
+                <label class="besedilo_vnos">Uporabniško ime:</label> <br>{{ registracijaForm.username }}<br>
+                <label class="besedilo_vnos">Vaše geslo:</label> <br> {{ registracijaForm.password1 }}<br>
+                <label class="besedilo_vnos">Ponovno vnesite geslo: </label> <br> {{ registracijaForm.password2 }}<br>
+                <br>
+                <label>
+                    <input type="checkbox" id="robot" required />
+                    <b class="besedilo_vnos">Nisem robot</b>
+                </label><br>
+                <label><input type="submit" class="gumb-pp" value="Registracija" /></label>
+                <br>
+            </form>
+            <p>{{ sporocilo }}</p>
+            <div>
+                    <label><input type="button" id="gumb-pp-slika" onclick="showSlika()" value="Posnemi fotografijo" /></label>
+                </div>
+                <div id="div-slikaj" hidden>
+                    <video id="video" width="140" height="140" autoplay></video>
+                    <button id="slikaj">Posnemi sliko</button>
+                    <canvas id="slika" width="140" height="140"></canvas>
+                    <script >
+                        window.addEventListener("DOMContentLoaded",doVideo,false);
+                        document.getElementById("slikaj").addEventListener("click", paintCapture,false);
+                    </script>
+                </div>
+        </div>
+    </div>
+{% endblock %}

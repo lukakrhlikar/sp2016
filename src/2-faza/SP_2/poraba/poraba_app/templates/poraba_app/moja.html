@@ -1,0 +1,84 @@
+{% extends "poraba_app/base.html" %}
+{% load static %}
+
+{% block main %}
+<div class="row centralna_ploskev">
+    {% if user.is_authenticated %}
+        <div class="row centralna_ploskev">
+            <div class="col-12 col-m-12">
+                <b class="barva font18">Moji avtomobili</b>
+            </div>
+            <div class="col-12 col-m-12 font18">
+                <label><input type="button" class="gumb-pp" onclick="showDodajAvtomobil()" value="Dodaj avtomobil" /></label>
+                <p><b class="header-title">Dodaj avtomobil in njegovo povprečno porabo.</b><b>(Za prikaz osveži stran(F5))</b></p>
+            </div>
+        </div>
+        <div class="row centralna_ploskev">
+            <div id="dodajvozilo-div" hidden class="col-5 col-m-6 barva">
+                <form method="POST" action="#">
+                    {% csrf_token %}
+                    Avtomobil: {{ dodajAvtoForm.ime }}<br>
+                    Poraba: {{ dodajAvtoForm.poraba_vozila }}<br>
+                    Tip goriva: {{ dodajAvtoForm.gorivo_tip }}<br>
+                    <label><input type="submit" class="gumb-pp" name="dodaj" value="Dodaj avtomobil"/></label>
+                </form>
+            </div>
+        </div>
+    <div class="row centralna_ploskev">
+        <div class="col-12 col-m-12">
+            <div class="uporabik">
+                <table id="mojA" style="width:100%">
+                    <caption><b>Moji avtomobili</b></caption>
+                    <tr>
+                        <th>Znamka</th>
+                        <th>Gorivo</th>
+                        <th>Poraba (l)</th>
+                    </tr>
+                    {% if avti %}
+                        {% for car in avti %}
+                            <tr>
+                                <td><a href="{% url 'poraba' car.id %}">{{ car.ime_vozila }}</a></td>
+                                <td>{{ car.tip_goriva }}</td>
+                                <td>{{ car.povprecna_poraba }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row centralna_ploskev">
+        <div class="col-12 col-m-12 barva">
+            <label><input type="button" class="gumb-pp" onclick="showDodajPorabo()" value="Izracun porabe in stroškov" /></label>
+        </div>
+        <div class="col-12 col-m-12">
+            <div id="dodajporabo-div" hidden class="col-5 col-m-6 barva">
+                <form onsubmit="event.preventDefault();">
+                    <label class="font18">Količina goriva: <input id="vnoskolicinagoriva" type="number" step="0.1" name="gorivo" placeholder="34.5" title="Natočena količina" required="required"/>l/100km</label>
+                    <br>
+                    <label class="font18">Tip goriva: <select id="tip_goriva1">
+                              <option value="1.245">Bencin 95</option>
+                              <option value="1.316">Bencin 100</option>
+                              <option value="1.149">Dizel</option>
+                        </select>
+                    </label>
+                    <br>
+                    <label class="font18">Prevoženi kilometri od zadnjega točenja: <input id="vnosPrevozenihKM" type="number" step="0.1" name="kilometri" placeholder="104" title="Prevoženi kilometri od zadnjega točenja" required="required"/>km</label>
+                    <br>
+                    <button class="gumb-pp" type="submit" onclick="izracunajMojaVozila()">Izračunaj</button>
+                    <br>
+                    <label class="font18">Povprečna poraba poti: <span id="povprecnaPorabaPoti">-</span> l/100km ali kwh/100km</label>
+                    <br>
+                    <label class="font18">Strošek: <span id="strosek">-</span>€</label>
+                    <br>
+                    <label class="font18">Strošek na 100 kilometrov: <span id="strosek100">-</span> €</label>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <p>Za dodanjanje vozil je potrebna <a href="{% url 'prijava' %}">prijava</a> oz <a href="{% url 'registracija' %}">registracija</a>.</p>
+    {% endif %}
+</div>
+{% endblock %}

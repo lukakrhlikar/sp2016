@@ -1,0 +1,37 @@
+{% extends "poraba_app/base.html" %}
+{% load static %}
+
+{% block main %}
+<div class="row centralna_ploskev">
+    <div class="col-12 col-m-12"></div>
+    <div class="col-12 col-m-12 uporabik">
+        <div>
+            {% if avti %}
+            <table id="cene" class="uporabik" style="width:100%">
+                <caption><b>Avtomobili</b></caption>
+                    <tr>
+                        <th>Ime</th>
+                        <th>Gorivo</th>
+                        <th>Poraba</th>
+                    </tr>
+                        {% for a in avti %}
+                            <tr>
+                                <td>{{ a.ime_vozila }}</td>
+                                <td>{{ a.tip_goriva }}</td>
+                                <td>{{ a.povprecna_poraba }}</td>
+
+                            </tr>
+                        {% endfor %}
+            </table>
+            <b>{{ sporocilo }}</b>
+            {% else %}
+                {% if sporocilo %}
+                    <b>{{ sporocilo }}</b>
+                {% else %}
+                    <b>Žal vaš iskalni niz ni ustrezal nobenemu avtomobilu.</b>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

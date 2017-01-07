@@ -1,0 +1,35 @@
+{% extends "poraba_app/base.html" %}
+{% load static %}
+
+{% block main %}
+<div class="row centralna_ploskev">
+    <div class="col-12 col-m-12"></div>
+    <div class="col-12 col-m-12 uporabik">
+        <div>
+            <table id="cene" class="uporabik" style="width:100%">
+                <caption><b>Porabe: {{ avto.ime_vozila }}</b></caption>
+                    <tr>
+                        <th>Poraba</th>
+                        <th>Datum</th>
+                    </tr>
+                    {% if porabe %}
+                        {% for p in porabe %}
+                            <tr>
+                                <td>{{ p.poraba }}</td>
+                                <td>{{ p.datum }}</td>
+
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+            </table>
+        </div>
+        <div>
+            <form method="POST" action="#">
+                {% csrf_token %}
+                {{ porabaForm.p }}
+                <label><input type="submit" class="gumb-pp" name="por" value="Dodaj porabo"/></label>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

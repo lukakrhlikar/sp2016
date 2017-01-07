@@ -1,0 +1,20 @@
+{% extends "poraba_app/base.html" %}
+{% load static %}
+
+{% block main %}
+<div class="row centralna_ploskev">
+    <div class="centerTextA">
+        <form class="prijava" method="POST" action="#">
+            {% csrf_token %}
+            <h2 class="podnaslovh2">Prijava</h2>
+            <label class="besedilo_vnos">Uporabniško ime:</label> <br>{{ prijavaForm.username }}<br>
+            <label class="besedilo_vnos">Vaše geslo:</label> <br>
+            {{ prijavaForm.password }}
+            <br>
+            <label><input type="submit" value="Prijava" class="gumb-pp" /></label>
+            <br>
+        </form>
+        <p>{{ sporocilo }}</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "poraba_app/base.html" %}
+{% load static %}
+
+{% block main %}
+<div class="row centralna_ploskev">
+       <h2 class="font18 barva">Računalo potnih stroškov</h2>
+       <div>
+           <form onsubmit="event.preventDefault();">
+           Razdalja: <input id="vnos_razdalja" type="number" step="0.1" name="razdalja" placeholder="500.0" title="Stevilo kilometrov" required="required"/> km
+           <br>
+           Tip goriva: <select id="tip_goriva">
+                          <option value="1.245">Bencin 95</option>
+                          <option value="1.316">Bencin 100</option>
+                          <option value="1.149">Dizel</option>
+                          <option value="0.07319">Elektrika</option>
+                        </select>
+           <br>
+           Povprečna poraba: <input id="vnos_poraba" type="number" step="0.1" name="poraba" placeholder="3.4" title="Vnesi povprečno porabo" required="required"/> l/100km ali kwh/100km
+           <br>
+           Število potnikov: <select id="potniki">
+                          <option value="0.1">1</option>
+                          <option value="0.3">2</option>
+                          <option value="0.4">3</option>
+                          <option value="0.5">4</option>
+                          <option value="0.6">5</option>
+                          <option value="0.7">6</option>
+                          <option value="0.8">7</option>
+                        </select>
+           <br>
+           Teža tovora: <select id="teza">
+                          <option value="0.3">manj od 100 kg</option>
+                          <option value="0.5">med 100 in 200 kg</option>
+                          <option value="1">več kot 200 kg</option>
+                        </select>
+           <br>
+           <button class="gumb-pp" type="submit" onclick="izracunaj()">Izračunaj</button>
+           <br>
+           <h3>Cena: <span id="cena">-</span>€</h3>
+           </form>
+       </div>
+
+    </div>
+{% endblock %}

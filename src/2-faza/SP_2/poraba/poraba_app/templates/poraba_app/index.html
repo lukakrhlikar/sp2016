@@ -1,0 +1,67 @@
+{% extends "poraba_app/base.html" %}
+{% load static %}
+
+{% block main %}
+<div class="row centralna_ploskev">
+        <div class="col-1 col-m-0"></div>
+        <div class="col-5 col-m-12">
+            <div class="uporabik">
+                <table style="width:100%">
+                    <caption><b>Cene goriv</b></caption>
+                    <tr>
+                        <th>Gorivo</th>
+                        <th>Cena (€)</th>
+                    </tr>
+                    <tr>
+                        <td>Bencin 95</td>
+                        <td>1.245</td>
+                    </tr>
+                    <tr>
+                        <td>Bencin 100</td>
+                        <td>1.316</td>
+                    </tr>
+                    <tr>
+                        <td>Dizel</td>
+                        <td>1.149</td>
+                    </tr>
+                    <tr>
+                        <td>Elektrika (kwh)</td>
+                        <td>0.07319</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-1 col-m-0"></div>
+</div>
+<div class="row centralna_ploskev">
+    <div class="col-1 col-m-0"></div>
+    <div class="col-10 col-m-12">
+        <div class="uporabik">
+            {% if uporabnik %}
+             <table style="width:100%">
+                <caption><b>Naključni Uporabnik</b></caption>
+                <tr>
+                    <td>Uporabniško ime:</td>
+                    <td>{{ uporabnik.username }}</td>
+                </tr>
+                <tr>
+                    <td>Vozilo:</td>
+                    <td>{{ avto.ime_vozila }}</td>
+                </tr>
+                <tr>
+                    <td>Gorivo:</td>
+                    <td>{{ avto.tip_goriva }}</td>
+                </tr>
+                <tr>
+                    <td>Povprečna poraba: (l/100km)</td>
+                    <td>{{ poraba }}</td>
+                </tr>
+            </table>
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-1 col-m-0"></div>
+</div>
+
+{% endblock %}

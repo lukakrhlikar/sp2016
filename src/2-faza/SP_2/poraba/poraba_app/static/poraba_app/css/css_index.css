@@ -1,0 +1,383 @@
+* {
+    box-sizing: border-box;
+}
+
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title {
+   padding: 10px;
+   display: block;
+}
+
+
+
+.menu .navigation {
+    display: block;
+}
+
+.menu ul {
+        display: none;
+    }
+
+@media only screen and (max-width: 554px ){
+     [class*="col-"] {
+        width: 100%;
+        float: left;
+        padding: 15px;
+    }
+}
+
+@media only screen and (min-width: 850px ){
+
+
+    li {
+       float: left;
+    }
+
+    .menu ul {
+        display: block;
+    }
+
+    .menu .navigation {
+        display: none;
+    }
+
+
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+    [class*="col-"] {
+        float: left;
+        padding: 15px;
+    }
+
+}
+@media only screen and (min-width: 1024px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    [class*="col-"] {
+        float: left;
+        padding: 15px;
+    }
+
+}
+
+
+
+.menu ul.open {
+    display: block;
+}
+
+
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.header {
+    background-image: url("header_ozadje.png");
+    background-size: cover;
+    color:#FFFFFF;
+}
+
+input,select {
+    color:rgb(50,50,50);
+    border-radius: 4px;
+    padding: 5px 10px;
+    border: 1px solid #ebebeb;
+    max-width: 100%;
+    width: 300px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+label {
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+placeholder {
+    color: #E4D3B5;
+}
+
+.gumb-header{
+    background-color: white; /* Green */
+    border: 0px;
+    color: rgb(50,50,50);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 250px;
+    float:right;
+    margin:2px;
+    transition: .4s all;
+}
+
+.gumb-header:hover {
+    transform: rotateZ(2deg);
+    cursor: pointer;
+}
+
+.gumb-pp{
+    background-color: white; /* Green */
+    border: 0px;
+    color: rgb(50, 50, 50);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 250px;
+    margin:2px;
+    transition: .4s all;
+}
+
+.gumb-pp:hover {
+    background-color: #ffa500;
+    color: white;
+    cursor: pointer;
+}
+
+#slikaj{
+    background-color: white; /* Green */
+    border: 0px;
+    color: rgb(255, 165, 0);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 250px;
+    margin:2px;
+    transition: .4s all;
+}
+#slikaj:hover {
+    background-color: #ffa500;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+#naslov1 {
+   font-size:48px;
+   color: rgb(50,50,50);
+   text-decoration: none;
+   margin: 10px;
+}
+
+#iskanje{
+    height:50px;
+    padding: 16px 32px;
+    font-size: 16px;
+    text-align: left;
+    width: 500px;
+    float: left;
+    display: inline-block;
+    border-radius: 5px;
+    border: 0px;
+    margin: 10px;
+    background-image: url('search.svg');
+    background-repeat: no-repeat no-repeat;
+    background-size: 20px 20px;
+    background-position: 95% center;
+}
+
+
+.vnos+*{
+    height:25px;
+    padding: 16px 32px;
+    font-size: 16px;
+    text-align: left;
+    width: 250px;
+    display: inline-block;
+    border-radius: 5px;
+    border: 0px;
+
+}
+
+.besedilo_vnos{
+    font-size: 16px;
+    color:rgb(255, 165, 0);
+    margin: 0;
+    padding: 15px 0;
+}
+
+div > form > h2 {
+    margin: 0;
+    padding: 15px 0;
+}
+footer{
+    background-color: rgb(255, 165, 0);
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+}
+
+
+.menu{
+    background-color: rgb(50,50,50);
+    color: rgb(255, 165, 0);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+}
+
+li {
+    position: relative;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: white;
+    display: block;
+}
+
+a {
+    color: rgb(255, 165, 0);
+}
+
+table, th, td{
+    border: 2px solid rgb(50,50,50);
+    border-collapse: collapse;
+    color:rgb(255, 165, 0);
+
+}
+
+th, td {
+padding: 5px;
+text-align: left;
+}
+
+.centralna_ploskev{
+    background-color: grey;
+    flex-grow:1;
+    padding: 0 20px;
+}
+
+.uporabik{
+     border: 2px solid rgb(50,50,50);
+     padding: 20px;
+     margin: 5px;
+}
+
+.uporabik caption b {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+
+#nisemrobot{
+    display: none;
+
+}
+.crta {
+    border-bottom:solid;
+    border-bottom-width:1px;
+
+}
+
+#gumb-pp-slika {
+    background-color: white; /* Green */
+    border: 0px;
+    color: rgb(255, 165, 0);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 250px;
+    margin:2px;
+    transition: .4s all;
+}
+
+#gumb-pp-slika:hover {
+    background-color: #ffa500;
+    color: white;
+    cursor: pointer;
+}
+
+
+.podnaslovh2 {
+    text-align:center;
+    color:rgb(255, 165, 0);
+}
+
+.centerTextA {
+    text-align: center;
+}
+
+.barva {
+    color:rgb(255, 165, 0);
+}
+
+.font18 {
+    font-size: 18px;
+}
+
+.slika-graf {
+    max-width: 100%;
+    min-width: 250px;
+    height: auto;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
