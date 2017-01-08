@@ -1,0 +1,11 @@
+BEGIN;
+--
+-- Add field datum to poraba
+--
+ALTER TABLE "poraba_app_poraba" RENAME TO "poraba_app_poraba__old";
+CREATE TABLE "poraba_app_poraba" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "datum" datetime NOT NULL, "poraba" decimal NOT NULL, "avto_id_id" integer NOT NULL REFERENCES "poraba_app_avtomobil" ("id"), "user_id_id" integer NULL REFERENCES "auth_user" ("id"));
+INSERT INTO "poraba_app_poraba" ("datum", "poraba", "avto_id_id", "user_id_id", "id") SELECT '2017-01-08 12:13:53.535605', "poraba", "avto_id_id", "user_id_id", "id" FROM "poraba_app_poraba__old";
+DROP TABLE "poraba_app_poraba__old";
+CREATE INDEX "poraba_app_poraba_44af9485" ON "poraba_app_poraba" ("avto_id_id");
+CREATE INDEX "poraba_app_poraba_18624dd3" ON "poraba_app_poraba" ("user_id_id");
+COMMIT;

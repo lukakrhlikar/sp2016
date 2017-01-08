@@ -1,0 +1,9 @@
+BEGIN;
+--
+-- Alter field strosek on user2
+--
+ALTER TABLE "poraba_app_user2" RENAME TO "poraba_app_user2__old";
+CREATE TABLE "poraba_app_user2" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "strosek" decimal NULL, "tip_voznika" varchar(45) NOT NULL, "user_id" integer NOT NULL UNIQUE REFERENCES "auth_user" ("id"));
+INSERT INTO "poraba_app_user2" ("strosek", "user_id", "tip_voznika", "id") SELECT "strosek", "user_id", "tip_voznika", "id" FROM "poraba_app_user2__old";
+DROP TABLE "poraba_app_user2__old";
+COMMIT;

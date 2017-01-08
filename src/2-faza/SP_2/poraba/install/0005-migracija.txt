@@ -1,0 +1,22 @@
+BEGIN;
+--
+-- Remove field user from profile
+--
+ALTER TABLE "poraba_app_profile" RENAME TO "poraba_app_profile__old";
+CREATE TABLE "poraba_app_profile" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "strosek" decimal NULL, "tip_voznika" varchar(45) NOT NULL);
+INSERT INTO "poraba_app_profile" ("strosek", "id", "tip_voznika") SELECT "strosek", "id", "tip_voznika" FROM "poraba_app_profile__old";
+DROP TABLE "poraba_app_profile__old";
+--
+-- Alter field user_id on avtomobil
+--
+ALTER TABLE "poraba_app_avtomobil" RENAME TO "poraba_app_avtomobil__old";
+CREATE TABLE "poraba_app_avtomobil" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id_id" integer NOT NULL REFERENCES "auth_user" ("id"), "ime_vozila" varchar(200) NOT NULL, "tip_goriva" varchar(45) NOT NULL, "ime_modela_id" integer NOT NULL REFERENCES "poraba_app_model_avto" ("id"));
+INSERT INTO "poraba_app_avtomobil" ("tip_goriva", "id", "ime_modela_id", "user_id_id", "ime_vozila") SELECT "tip_goriva", "id", "ime_modela_id", coalesce("user_id_id", NULL), "ime_vozila" FROM "poraba_app_avtomobil__old";
+DROP TABLE "poraba_app_avtomobil__old";
+CREATE INDEX "poraba_app_avtomobil_18624dd3" ON "poraba_app_avtomobil" ("user_id_id");
+CREATE INDEX "poraba_app_avtomobil_5d5130d7" ON "poraba_app_avtomobil" ("ime_modela_id");
+--
+-- Delete model Profile
+--
+DROP TABLE "poraba_app_profile";
+COMMIT;

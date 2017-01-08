@@ -1,0 +1,27 @@
+BEGIN;
+--
+-- Rename field ime on avtomobil to ime_vozila
+--
+ALTER TABLE "poraba_app_avtomobil" RENAME TO "poraba_app_avtomobil__old";
+CREATE TABLE "poraba_app_avtomobil" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "ime_vozila" varchar(200) NOT NULL, "tip_goriva" varchar(1) NOT NULL, "ime_modela_id" integer NOT NULL REFERENCES "poraba_app_model_avto" ("id"), "user_id_id" integer NULL REFERENCES "poraba_app_user2" ("id"));
+INSERT INTO "poraba_app_avtomobil" ("tip_goriva", "user_id_id", "id", "ime_vozila", "ime_modela_id") SELECT "tip_goriva", "user_id_id", "id", "ime", "ime_modela_id" FROM "poraba_app_avtomobil__old";
+DROP TABLE "poraba_app_avtomobil__old";
+CREATE INDEX "poraba_app_avtomobil_5d5130d7" ON "poraba_app_avtomobil" ("ime_modela_id");
+CREATE INDEX "poraba_app_avtomobil_18624dd3" ON "poraba_app_avtomobil" ("user_id_id");
+--
+-- Alter field tip_goriva on avtomobil
+--
+ALTER TABLE "poraba_app_avtomobil" RENAME TO "poraba_app_avtomobil__old";
+CREATE TABLE "poraba_app_avtomobil" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "ime_vozila" varchar(200) NOT NULL, "ime_modela_id" integer NOT NULL REFERENCES "poraba_app_model_avto" ("id"), "user_id_id" integer NULL REFERENCES "poraba_app_user2" ("id"), "tip_goriva" varchar(45) NOT NULL);
+INSERT INTO "poraba_app_avtomobil" ("id", "ime_vozila", "user_id_id", "tip_goriva", "ime_modela_id") SELECT "id", "ime_vozila", "user_id_id", "tip_goriva", "ime_modela_id" FROM "poraba_app_avtomobil__old";
+DROP TABLE "poraba_app_avtomobil__old";
+CREATE INDEX "poraba_app_avtomobil_5d5130d7" ON "poraba_app_avtomobil" ("ime_modela_id");
+CREATE INDEX "poraba_app_avtomobil_18624dd3" ON "poraba_app_avtomobil" ("user_id_id");
+--
+-- Alter field tip_voznika on user2
+--
+ALTER TABLE "poraba_app_user2" RENAME TO "poraba_app_user2__old";
+CREATE TABLE "poraba_app_user2" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "strosek" decimal NOT NULL, "user_id" integer NOT NULL UNIQUE REFERENCES "auth_user" ("id"), "tip_voznika" varchar(45) NOT NULL);
+INSERT INTO "poraba_app_user2" ("id", "strosek", "user_id", "tip_voznika") SELECT "id", "strosek", "user_id", "tip_voznika" FROM "poraba_app_user2__old";
+DROP TABLE "poraba_app_user2__old";
+COMMIT;

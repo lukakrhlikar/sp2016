@@ -1,0 +1,12 @@
+BEGIN;
+--
+-- Rename model User2 to Profile
+--
+ALTER TABLE "poraba_app_user2" RENAME TO "poraba_app_profile";
+ALTER TABLE "poraba_app_avtomobil" RENAME TO "poraba_app_avtomobil__old";
+CREATE TABLE "poraba_app_avtomobil" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id_id" integer NULL REFERENCES "poraba_app_profile" ("id"), "ime_vozila" varchar(200) NOT NULL, "tip_goriva" varchar(45) NOT NULL, "ime_modela_id" integer NOT NULL REFERENCES "poraba_app_model_avto" ("id"));
+INSERT INTO "poraba_app_avtomobil" ("id", "ime_modela_id", "user_id_id", "ime_vozila", "tip_goriva") SELECT "id", "ime_modela_id", "user_id_id", "ime_vozila", "tip_goriva" FROM "poraba_app_avtomobil__old";
+DROP TABLE "poraba_app_avtomobil__old";
+CREATE INDEX "poraba_app_avtomobil_18624dd3" ON "poraba_app_avtomobil" ("user_id_id");
+CREATE INDEX "poraba_app_avtomobil_5d5130d7" ON "poraba_app_avtomobil" ("ime_modela_id");
+COMMIT;

@@ -1,0 +1,50 @@
+BEGIN;
+--
+-- Remove field znamka from model_avto
+--
+ALTER TABLE "poraba_app_model_avto" RENAME TO "poraba_app_model_avto__old";
+CREATE TABLE "poraba_app_model_avto" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "model_avto" varchar(45) NOT NULL);
+INSERT INTO "poraba_app_model_avto" ("id", "model_avto") SELECT "id", "model_avto" FROM "poraba_app_model_avto__old";
+DROP TABLE "poraba_app_model_avto__old";
+--
+-- Remove field ime_modela from avtomobil
+--
+ALTER TABLE "poraba_app_avtomobil" RENAME TO "poraba_app_avtomobil__old";
+CREATE TABLE "poraba_app_avtomobil" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "ime_vozila" varchar(200) NOT NULL, "tip_goriva" varchar(45) NOT NULL, "user_id_id" integer NOT NULL REFERENCES "auth_user" ("id"));
+INSERT INTO "poraba_app_avtomobil" ("id", "ime_vozila", "user_id_id", "tip_goriva") SELECT "id", "ime_vozila", "user_id_id", "tip_goriva" FROM "poraba_app_avtomobil__old";
+DROP TABLE "poraba_app_avtomobil__old";
+CREATE INDEX "poraba_app_avtomobil_18624dd3" ON "poraba_app_avtomobil" ("user_id_id");
+--
+-- Add field user_id to poraba
+--
+ALTER TABLE "poraba_app_poraba" RENAME TO "poraba_app_poraba__old";
+CREATE TABLE "poraba_app_poraba" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id_id" integer NULL REFERENCES "auth_user" ("id"), "poraba" decimal NOT NULL, "avto_id_id" integer NOT NULL REFERENCES "poraba_app_avtomobil" ("id"));
+INSERT INTO "poraba_app_poraba" ("id", "avto_id_id", "user_id_id", "poraba") SELECT "id", "avto_id_id", NULL, "poraba" FROM "poraba_app_poraba__old";
+DROP TABLE "poraba_app_poraba__old";
+CREATE INDEX "poraba_app_poraba_18624dd3" ON "poraba_app_poraba" ("user_id_id");
+CREATE INDEX "poraba_app_poraba_44af9485" ON "poraba_app_poraba" ("avto_id_id");
+--
+-- Alter field tip_goriva on avtomobil
+--
+ALTER TABLE "poraba_app_avtomobil" RENAME TO "poraba_app_avtomobil__old";
+CREATE TABLE "poraba_app_avtomobil" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "ime_vozila" varchar(200) NOT NULL, "user_id_id" integer NOT NULL REFERENCES "auth_user" ("id"), "tip_goriva" varchar(45) NOT NULL);
+INSERT INTO "poraba_app_avtomobil" ("id", "ime_vozila", "user_id_id", "tip_goriva") SELECT "id", "ime_vozila", "user_id_id", "tip_goriva" FROM "poraba_app_avtomobil__old";
+DROP TABLE "poraba_app_avtomobil__old";
+CREATE INDEX "poraba_app_avtomobil_18624dd3" ON "poraba_app_avtomobil" ("user_id_id");
+--
+-- Alter field user_id on avtomobil
+--
+ALTER TABLE "poraba_app_avtomobil" RENAME TO "poraba_app_avtomobil__old";
+CREATE TABLE "poraba_app_avtomobil" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "ime_vozila" varchar(200) NOT NULL, "tip_goriva" varchar(45) NOT NULL, "user_id_id" integer NULL REFERENCES "auth_user" ("id"));
+INSERT INTO "poraba_app_avtomobil" ("id", "ime_vozila", "user_id_id", "tip_goriva") SELECT "id", "ime_vozila", "user_id_id", "tip_goriva" FROM "poraba_app_avtomobil__old";
+DROP TABLE "poraba_app_avtomobil__old";
+CREATE INDEX "poraba_app_avtomobil_18624dd3" ON "poraba_app_avtomobil" ("user_id_id");
+--
+-- Delete model Model_avto
+--
+DROP TABLE "poraba_app_model_avto";
+--
+-- Delete model Znamka
+--
+DROP TABLE "poraba_app_znamka";
+COMMIT;
